@@ -1,0 +1,26 @@
+[
+  {
+    "kind": "pg",
+    "body": "Hasil dari 7 × 8 adalah ...",
+    "options": ["54", "56", "58", "64"],
+    "answer": 1,
+    "points": 1,
+    "explanation": "7 × 8 = 56."
+  },
+  {
+    "kind": "pgk",
+    "body": "Manakah yang merupakan bilangan genap? (pilih semua yang benar)",
+    "options": ["2", "3", "4", "7"],
+    "answer": [0, 2],
+    "points": 2
+  },
+  {
+    "kind": "bs",
+    "passage": "Teks bacaan boleh diisi di sini. Kolom ini opsional.",
+    "body": "Tentukan Benar atau Salah untuk setiap pernyataan.",
+    "options": ["Jakarta adalah ibu kota Indonesia.", "Matahari terbit dari barat."],
+    "answer": [true, false],
+    "points": 2,
+    "explanation": "Nilai dihitung per pernyataan."
+  }
+]

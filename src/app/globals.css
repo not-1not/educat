@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* Tema EduCAT: biru sebagai warna utama dengan aksen hangat yang lembut. */
+@theme {
+  --color-brand-50: #eff8ff;
+  --color-brand-100: #dceeff;
+  --color-brand-500: #55a6df;
+  --color-brand-600: #368fca;
+  --color-brand-700: #2879b2;
+  --color-brand-900: #194d73;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @apply text-slate-900 antialiased;
+  background-color: #f8fbff;
+  background-image:
+    radial-gradient(ellipse at 12% 8%, rgb(255 211 171 / 28%), transparent 34rem),
+    radial-gradient(ellipse at 88% 16%, rgb(174 218 255 / 32%), transparent 38rem),
+    linear-gradient(135deg, #fcfdff 0%, #f7faff 54%, #fffaf5 100%);
+  background-attachment: fixed;
+}
+
+.auth-stage {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100dvh;
+}
+
+.auth-stage::before,
+.auth-stage::after {
+  position: absolute;
+  z-index: -1;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 9999px;
+  content: "";
+  filter: blur(72px);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.auth-stage::before {
+  top: 8%;
+  left: -9rem;
+  background: rgb(255 190 135 / 38%);
+}
+
+.auth-stage::after {
+  right: -9rem;
+  bottom: 4%;
+  background: rgb(132 196 248 / 36%);
+}
+
+.glass-panel {
+  border-color: rgb(255 255 255 / 78%);
+  background: rgb(255 255 255 / 78%);
+  box-shadow: 0 24px 70px -38px rgb(34 79 117 / 28%);
+  -webkit-backdrop-filter: blur(20px) saturate(135%);
+  backdrop-filter: blur(20px) saturate(135%);
+}
+
+.auth-dialog {
+  animation: auth-dialog-enter 360ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes auth-dialog-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-dialog {
+    animation: none;
+  }
+}
+
+/* Area sentuh minimal 44 px untuk tombol di HP dan tablet. */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
