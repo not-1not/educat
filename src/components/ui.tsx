@@ -21,10 +21,11 @@ export function Button({
     "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50 disabled:cursor-not-allowed disabled:opacity-50";
   const sizes = size === "sm" ? "min-h-9 px-3 text-sm" : "touch-target px-4 text-sm";
   const variants = {
-    primary: "bg-gradient-to-r from-brand-700 to-brand-600 text-white shadow-sm shadow-brand-700/15 hover:from-brand-900 hover:to-brand-700",
-    secondary: "border border-white/80 bg-white/75 text-slate-800 backdrop-blur-md hover:bg-white",
+    primary: "bg-brand-700 text-white hover:bg-brand-900",
+    secondary: "border border-slate-300 bg-white text-slate-800 hover:bg-slate-50",
     danger: "bg-red-600 text-white hover:bg-red-700",
     ghost: "text-slate-700 hover:bg-slate-100",
+    clay: "btn-clay",
   }[variant];
   return <button type={type} className={`${base} ${sizes} ${variants} ${className}`} {...props} />;
 }
@@ -55,7 +56,7 @@ export function Card({
   className?: string;
 }) {
   return (
-    <div className={`glass-panel rounded-2xl border p-4 sm:p-5 ${className}`}>
+    <div className={`clay-card p-4 sm:p-5 ${className}`}>
       {children}
     </div>
   );
